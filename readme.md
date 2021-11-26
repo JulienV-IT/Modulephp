@@ -5,22 +5,34 @@
     [w3schools](https://www.w3schools.com/php/default.asp)
 
 Jour 1:
+    
     client/serveur
+    
     installation apache2 mysql
       
     
 Jour 2:
+    
     variable
+    
     tableaux
+    
     tableaux associatifs
+    
     fonctions et boucle 
     
 Jour 3:
+    
     instruction
+    
     opérateur
+    
     incrément / décrément
+    
     try catch
+    
     boucle et conditions
+    
     switch & type conditions
 
 Jour 4:
