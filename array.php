@@ -1,4 +1,3 @@
-
 <!-- A faire
 
 -  jouer avec les variables :
@@ -15,7 +14,7 @@
     - retirer ajouter un élement dans le tableau
 
 
-exemple: 
+exemple:
 
  -->
 
