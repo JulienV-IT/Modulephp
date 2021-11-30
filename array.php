@@ -3,7 +3,7 @@
 -  jouer avec les variables :
 
     - 3 var de types differents
-    - récuperer le type de vos variables
+    - récuperer le type de vos variables et les affichées
     - modifier une variable de type string ("chaine de charactere") ex: remplacer toutes les majs par des mins
 
 - jouer avec les tableaux:
