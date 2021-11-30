@@ -8,11 +8,11 @@ $ville = $_POST['ville'];
 
 
 // if(isset($nom) && isset($firstname) && isset($age) && isset($ville)){
-if($nom != null && $firstname != null && $age != null && $ville != null){
-echo("Les champs sont remplit");
+if(($nom == null) && ($firstname == null) && ($age == null) && ($ville == null)){
+  echo (" y'a une couille dans le paté");
 
 } else {
-  echo (" y'a une couille dans le paté");
+  echo("Les champs sont remplit");
 }
 
 ?>
