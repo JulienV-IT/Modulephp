@@ -159,6 +159,22 @@ switch($commande)
                 $_SESSION['$idsession']=true; // true ATB -> passage à true -> mise en mémoire;
                 $_SESSION['concatenation']=false;
               break;
+    case "-" :  $_SESSION['operation']="-";
+                $_SESSION['chiffre2']=$_SESSION["chiffre1"];
+                $_SESSION['$idsession']=true; 
+                $_SESSION['concatenation']=false;
+              break;
+    case "*" :  $_SESSION['operation']="*";
+                $_SESSION['chiffre2']=$_SESSION["chiffre1"];
+                $_SESSION['$idsession']=true; 
+                $_SESSION['concatenation']=false;
+              break;
+    case "/" :  $_SESSION['operation']="/";
+                $_SESSION['chiffre2']=$_SESSION["chiffre1"];
+                $_SESSION['$idsession']=true; 
+                $_SESSION['concatenation']=false;
+              break;
+
     // "bouton" = pressé -> on déclenche le calcule par appel de la fonction calcule et passage des arguments requis  
     case "=" :  $_SESSION['resultat']=calcule($_SESSION['chiffre1'],$_SESSION['operation'],$_SESSION['chiffre2']);
                 $_SESSION['$idsession']=true;
