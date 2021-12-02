@@ -68,7 +68,7 @@ $(document).ready(function(event){
   .fail(function(){
     alert("something wrong.....");
   });
-  returns false;
+  return false; //Returns
 
   });
 

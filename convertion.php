@@ -30,7 +30,7 @@
     }*/
 
     //$file ="Classeur8.csv";
- /*   function csvtojson($file,$delimiter)
+function csvtojson($file,$delimiter)
 {
     if (($handle = fopen($file, "r")) === false)
     {
@@ -50,14 +50,14 @@
 }
 
 
-$jsonresult = csvtojson("data.csv", ",");
+$jsonresult = csvtojson("data1.csv", ",");
 
-echo $jsonresult;*/
+echo $jsonresult;
 
+/*
 $file="data.csv";
 $csv= file_get_contents($file);
 $array = array_map("str_getcsv", explode("\n", $csv));
 $json = json_encode($array);
-print_r($json);
-
+print_r($json);*/
 ?>
