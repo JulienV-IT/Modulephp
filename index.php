@@ -1,85 +1,59 @@
 <?php
 
-
-include_once 'array.php';
-require_once 'variable.php';
+// echo "welcome to crud json using php <br>";
 
 
 
-$var1 = 10;
-$var2 = 20;
-$var3 = 30;
-$var4 = 40;
-$var5 = 50;
 
-$talbecommand = array(1,1,1,1,1);
 
-$arraytest=array($var1, $var2, $var3, $var4, $var5);
+// le groupe stockage fournit un fichier structurer  en json
 
-function runTable($arraytest,$talbecommand,$item){
-    $var6 =60;
-    switch ($item)
-    {
-        // case ($talbecommand[$item]==1):
-        case 0:
-            for($i=0;$i<count($arraytest);++$i){
-                   echo $arraytest[$i];
-            }
-        ?>
-        <br>
-        <?php
-        break;
-        case 1:
-            for($i=4;$i>=0;--$i){
-                    echo $arraytest[$i];
-            }
-        ?>
-        <br>
-        <?php
-            break;
-        case 2:
-            for($i=0;$i < count($arraytest);++$i){
+// le groupe CRUD récupere le fichier json et le lis (ouvrir le fichier et le parcourir)
 
-                echo $arraytest[array_rand($arraytest)];
-            }
-        ?>
-        <br>
-        <?php
-            break;
-        case 3:
-              array_push($arraytest, $var6);
-              for($i=0;$i<count($arraytest);++$i){
-                echo $arraytest[$i];
-         }
-         ?>
-         <br>
-         <?php
-        break;
-        case 4:
-              unset($arraytest[4]);
-              for($i=0;$i<count($arraytest);++$i){
-                echo $arraytest[$i];
-              }
-        ?>
-        <br>
-        <?php
-        break;
-        default:
-    }
-}
+// transformer les données json du fichier en données php manipulable (json_decode)
 
-function parcours($arraytest,$talbecommand){
-    /*foreach($talbecommand as $item){
-        runTable($arraytest,$talbecommand,$item);
-    }*/
-    for($i=0;$i<count($arraytest);$i=$i+1)
-    {
-        if($talbecommand[$i]==1){
-            runTable($arraytest,$talbecommand,$i);
-        }
-    }
-}
+// avec php ouvrir le fichier ne mode ecriture  fwrite
 
-parcours($arraytest,$talbecommand);
+// avec php créer un tableau de variables a encoder en json
+
+// ecrire dnas le fichier notre tableau créer précédement
+
+date_default_timezone_set("India/Mumbai");
+echo date_default_timezone_get();
+echo " ".date("H:i:s");
+
+
+
+$dubaidate = date("H:i:s\eTZ");
+var_dump($dubaidate);
+
+
+$newhourphp = array("fuseau" => "GMT+4", "heure" => "19;16"); // reunion en php
+$encodednewhour = json_encode($newhourphp);
+// var_dump($encodednewhour);
+
+
+
+
+///create -------------------------------
+$jsonhour = fopen("hour.json", "w");
+
+
+
+/// READ ---------------------------------
+$jsonhour =file_get_contents('hour.json', "r");
+$hour = json_decode($jsonhour, true);
+echo $hour["heures"];
+echo $hour["fuseau"];
+echo "\r\n";
+echo $hour["heure"];
+
+
+///update -------------------------------
+
+///delete -------------------------------
+
+
+
 
 ?>

@@ -1,9 +1,9 @@
+
 {
-  "heures":{
-      "titre": "les heures dans le monde",
-          "fuseauList":{
-              "fuseau": "GMT+1",
-                  "heure": "17:03"
-            },
-          }
+"heures":[
+    {
+      "fuseau": "GMT+1",
+      "heure": "15:53"
+    }
+  ]
 }
