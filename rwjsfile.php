@@ -1,35 +1,17 @@
 <?php
 
-    //pseudo:{Race:$race,Class:$class},
-    //"Kastielle":{Race:"human",Class:"paladin"}
+    //$file = "heures1.json";
 
-    /*
-    $pseudo = "Kastielle";
-    $race = "human";
-    $class = "paladin";
-
-    $file = "list.txt";
-    //  2021 CET;UTC/GMT +01:00
-    // Europe/Brussels;05:49 PM Mon
-    $json[$pseudo] = array("Race" => $race, "Class" => $class); */
-/*
+    /*version 1 -> une seule heure  
     $file = "list.txt";
     $selectedtime = "Brussels";
     $continent = "Europe";
     $fuseau = "UTC";
-    $decalage ="GMT +01:00";
-*/
+    $decalage ="GMT +01:00";     
+    $json[$selectedtime] = array("continent" => $continent, "fuseau" => $fuseau, "decalage" => $decalage);*/
 
-/*
-    $file = "list.txt";
-    $selectedtime = array("Brussels","Paris");
-    $continent = array("Europe","Europe");
-    $fuseau = array("UTC","UTC");
-    $decalage = array("GMT +01:00", "GMT +01:00") ;*/
-
-    $file = "list.txt";
-
-    $time = [['selectedtime' => 'Brussels', 'continent' => 'Europe', 'fuseau' => 'UTC', 'decalage' => 'GMT +01:00'],
+    // version2 tableau de tableaux associatifs
+    /* $time = [['selectedtime' => 'Brussels', 'continent' => 'Europe', 'fuseau' => 'UTC', 'decalage' => 'GMT +01:00'],
             ['selectedtime' => 'Paris','continent' => 'Europe' , 'fuseau' => 'UTC', 'decalage' =>'GMT +01:00'],];
     
     foreach ($time as $key => $time){
@@ -41,21 +23,46 @@
                 $json[$time["selectedtime"]] = array("continent" => $time["continent"], "fuseau" => $time["fuseau"], "decalage" => $time["decalage"]);
                  
             }
-            echo '<br>';
-}
+            echo '<br>';*/
 
-
-
-
-    //$json[$selectedtime] = array("continent" => $continent, "fuseau" => $fuseau, "decalage" => $decalage);
-
-    file_put_contents($file, json_encode($json,TRUE));
+    // version3 avec decode de json en dur dans le programme
+    $json = '{
+        "uid":0,
+        "selected":[
+           {
+              "selectedtime": "Brussels",
+              "continent": "Europe",
+              "fuseau": "UTC",
+              "decalage": "GMT +01:00"
+           },
+           {
+              "selectedtime": "Paris",
+              "continent": "Europe",
+              "fuseau": "UTC",
+              "decalage": "GMT +01:00"
+           }
+        ]
+     }';
+    
+    $_POST = json_decode($json, true); 
+    $uid = $_POST['uid'];
+    $time = $_POST['selected'];
+   
+    var_dump($time);
+        
+    foreach ($time as $item){
+        foreach($item as $key => $value){
+        $json[$time["selectedtime"]] = array("selectedtime" => $time["selectedtime"],"continent" => $time["continent"], "fuseau" => $time["fuseau"], "decalage" => $time["decalage"]);
+        }
+    }
+    
+    file_put_contents($file, json_encode($json1,TRUE));
 
     $headers = array('http'=>array('method'=>'GET','header'=>'Content: type=application/json \r\n'.'$agent \r\n'.'$hash'));
     
     $context=stream_context_create($headers);
     
-    $str = file_get_contents("list.txt",FILE_USE_INCLUDE_PATH,$context);
+    $str = file_get_contents("heures1.json",FILE_USE_INCLUDE_PATH,$context);
     
     $str1=utf8_encode($str);
     
