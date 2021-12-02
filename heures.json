@@ -1,0 +1,16 @@
+ [{
+     "uid": 1,
+     "selected": [{
+             "selectedtime": "Brussels",
+             "continent": "Europe",
+             "fuseau": "UTC",
+             "decalage": "GMT +01:00"
+         },
+         {
+             "selectedtime": "Paris",
+             "continent": "Europe",
+             "fuseau": "UTC",
+             "decalage": "GMT +01:00"
+         }
+     ]
+ }]
