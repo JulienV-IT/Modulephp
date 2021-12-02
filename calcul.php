@@ -182,9 +182,15 @@ switch($commande)
               break;
     // "bouton" "CE" pressé raz de la session en cas d'erreur de saisie 
     // utilie aussi pour le debug.
+    case "." :	if ($_SESSION['concatenation']==false)
+                {
+                $_SESSION["chiffre1"]=$_SESSION["chiffre1"] .".";
+                $_SESSION['concat']=true;
+                }
+    break;  
     case "CE" :	session_destroy();
                 $_SESSION['resultat']="";
-              break;							
+              break;	 
 }
 
 function calcule($chiffre1,$operation,$chiffre2)
@@ -194,8 +200,8 @@ var_dump ($chiffre1);
 var_dump ($operation);
 var_dump ($chiffre2);
 
-$chiffre1= (int) $chiffre1;
-$chiffre2= (int) $chiffre2;
+$chiffre1= (float) $chiffre1;
+$chiffre2= (float) $chiffre2;
 
 // controle de l'opération
 switch($operation)
@@ -266,7 +272,7 @@ switch($operation)
                     </tr>
                     <tr>
                         <td align="center"> <input type="submit" name="commande" value="   0   "></td>
-                        <td align="center"> <input type="submit" name="commande" value="   .    "></td>
+                        <td align="center"> <input type="submit" name="commande" value="   .   "></td>
                         <td align="center"> <input type="submit" name="commande" value="   =   "></td>
                         <td align="center"> <input type="submit" name="commande" value="   /   "></td>
                     </tr>

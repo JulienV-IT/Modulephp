@@ -1,1 +1,1 @@
-{"Kastielle":{"Race":"human","Class":"paladin"}}
+{"Brussels":{"continent":"Europe","fuseau":"UTC","decalage":"GMT +01:00"},"Paris":{"continent":"Europe","fuseau":"UTC","decalage":"GMT +01:00"}}
