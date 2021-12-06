@@ -1,9 +1,4 @@
-
 {
-"heures":[
-    {
-      "fuseau": "GMT+1",
-      "heure": "15:53"
-    }
-  ]
+    "fuseau": "GMT+1",
+    "heure": "15:53"
 }
