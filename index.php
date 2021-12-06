@@ -2,6 +2,9 @@
 include 'heures.php';
 echo "welcome to class php <br>";
 
+
+
+
 // le groupe stockage fournit un fichier structurer  en json
 
 // le groupe CRUD récupere le fichier json et le lis (ouvrir le fichier et le parcourir)
@@ -16,7 +19,7 @@ echo "welcome to class php <br>";
 
 // date_default_timezone_set("India/Mumbai");
 // echo date_default_timezone_get();
-// echo " ".date("H:i:s");
+// echo " ".date("Hpublic:i:s");
 
 // $code = $hour["code"];
 
@@ -48,16 +51,30 @@ echo "welcome to class php <br>";
 $actual =  date("H:m:s d m Y");
 //
 //
-// $allTime = new Heures();
-// $allTime->get_All_Time();
+$allTime = new Heures();
+$allTime->get_All_Time();
+
+
+
+// $setFuz = new Heures();
+// var_dump($setFuz);
+// $setFuz->set_fuseau("GMT+4");
 //
-$setFuz = new Heures();
-$setFuz->set_fuseau("GMT+4");
+// $getFuz = new Heures();
+// $getFuz->get_fuseau();
+//
+// $sethour = new Heures();
+// $sethour->set_heure("13:55",);
+//
+// $gethour = new Heures();
+// var_dump($gethour->get_heure(););
+//
+//
+// $sessionset = new Heures();
+// $sessionset->set_session($_SESSION);
 
-$getFuz = new Heures();
-$getFuz->get_fuseau();
+// algo de detection de system et de machine
 
-echo("echo: ".$getFuz->get_fuseau());
 
 
 

@@ -2,13 +2,20 @@
 
 
 class Heures {
-  public $fuseau;
-  public $heure;
+
+
+  private $session;
+  public $fuseau; // const $fuseau;
+  public $heure; // const $heure
+  private $cities;// var $cities (dans une fonction ou une boucle) non accessible en dehors
 
 
 
-  function set_fuseau($fuseau){
-    $this->fuseau = $fuseau;
+  
+
+
+  function set_fuseau($setfuseau){
+    $this->fuseau = $setfuseau;
   }
 
   function get_fuseau(){
@@ -22,6 +29,12 @@ class Heures {
   function get_heure(){
     return $this->heure;
   }
+
+
+  function sayHello(){
+    echo("blabla test");
+  }
+
 
   function get_All_Time(){
 
