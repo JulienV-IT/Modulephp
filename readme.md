@@ -10,6 +10,13 @@
 
     [function array](https://www.php.net/manual/fr/ref.array.php )
 
+## Class & POO
+
+
+    [ref class php](https://www.w3schools.com/php/php_oop_classes_objects.asp )
+
+    [datetime](https://www.php.net/manual/en/book.datetime.php )
+
 
 Jour 1:
 
